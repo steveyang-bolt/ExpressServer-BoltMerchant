@@ -9,7 +9,7 @@ to install required packages specified in `package.json`
 
 ### Step 2
 Run 
-```node start```
+```npm start```
 to start the server. The server listens on port `9090`
 
 
