@@ -1,0 +1,8 @@
+{
+    "status": "failure",
+    "error": {
+        "code": 1,
+        "message": "bolt_message"
+    },
+    "display_id": "bolt_id"
+}
