@@ -1,5 +1,5 @@
 {
-    "event": "create.cart",
+    "event": "order.shipping",
     "status": "success",
     "error": "",
     "data": ""
