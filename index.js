@@ -5,7 +5,8 @@ var winston = require('winston'); // for transports.Console
 var bodyParser = require('body-parser')
 const app = express();
 const PORT = 9090;
-var respJsonFile = require("./data/resp.json");
+var universalAPIResp = require("./universal_api_data/shipping_and_tax_success.json");
+var webhookResp = require("./webhook_data/success.json")
 
 //Allow all requests from all domains & localhost
 app.all('/*', function(req, res, next) {
@@ -18,6 +19,11 @@ app.all('/*', function(req, res, next) {
 // Router Section
 var router = express.Router()
 router.post("/universal", (req, res) => {
+  console.log(req.body);
+  res.json(respJsonFile);
+});
+
+router.post("/webhook", (req, res) => {
   console.log(req.body);
   res.json(respJsonFile);
 });
