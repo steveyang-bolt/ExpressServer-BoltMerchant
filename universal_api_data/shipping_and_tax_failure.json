@@ -2,5 +2,4 @@
     "event": "order.shipping_and_tax",
     "status": "failure",
     "error": "",
-    "data": ""
 }

@@ -1,6 +1,7 @@
 {
     "event": "cart.create",
     "status": "failure",
-    "error": "",
-    "data": ""
+    "error": {
+        "code": 6301
+    }
 }

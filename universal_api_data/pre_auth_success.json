@@ -1,6 +1,8 @@
 {
     "event": "order.create",
     "status": "success",
-    "error": "",
-    "data": ""
+    "data": {
+        "display_id": "bolt_id",
+        "order_received_url": "bolt_url"
+    }
 }

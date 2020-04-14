@@ -1,6 +1,14 @@
 {
     "event": "cart.create",
     "status": "success",
-    "error": "",
-    "data": ""
+    "data": {
+        "cart": {
+            "total_amount": 100,
+            "items": [
+                
+            ],
+            "order_reference": "bolt_reference",
+            "display_id": "bolt_display_id"
+        }
+    }
 }
