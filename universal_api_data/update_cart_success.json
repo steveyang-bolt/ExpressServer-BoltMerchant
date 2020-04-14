@@ -1,6 +1,36 @@
 {
     "event": "cart.update",
     "status": "success",
-    "error": "",
-    "data": ""
+    "data": {
+        "order_create": {
+            "external_inputs": {
+                "shopify_request": "bolt_shopify"
+            },
+            "cart": {
+                "total_amount": 10,
+                "items": [],
+                "tax_amount": 1,
+                "billing_address_id": "bolt_billing_address_id",
+                "billing_address": "bolt_billing_address",
+                "shipments": [],
+                "in_store_cart_shipments": [],
+                "discounts": [],
+                "discount_code": "bolt_discount_code",
+                "discount_source": 1,
+                "currency": "USD",
+                "order_description": "bolt_description",
+                "order_reference": "bolt_reference",
+                "transaction_reference": "bolt_reference",
+                "cart_url": "bolt_url",
+                "display_id": "bolt_display_id",
+                "is_shopify_hosted_checkout": false,
+                "metadata": {}
+            },
+            "user_note": "bolt_note",
+            "create_cart_on_merchant_backend": true,
+            "metadata": {
+                "encrypted_user_id": "bolt_user_id"
+            }
+        }
+    }
 }

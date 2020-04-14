@@ -1,6 +1,5 @@
 {
     "event": "order.create",
     "status": "failure",
-    "error": "",
-    "data": ""
+    "error": ""
 }

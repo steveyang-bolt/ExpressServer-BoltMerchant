@@ -1,6 +1,30 @@
 {
     "event": "order.shipping_and_tax",
     "status": "success",
-    "error": "",
-    "data": ""
+    "data": {
+        "tax_result":{
+            "items": [
+                {
+                    "rate":1,
+                    "amount":1
+                }
+            ],
+            "rate": 1,
+            "rate_subtotal":1,
+            "rate_shipping":1,
+            "subtotal_amount":1,
+            "amount":1
+        },
+        "shipping_options":[
+            {
+                "service": "UPS",
+                "cost": 1,
+                "tax_amount": 1,
+                "reference": "bolt_reference",
+                "signature": "bolt_signature",
+                "default": true
+            }
+        ],
+        "currency": "USD"
+    }
 }

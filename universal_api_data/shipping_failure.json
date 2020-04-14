@@ -1,6 +1,5 @@
 {
     "event": "order.shipping",
     "status": "failure",
-    "error": "",
-    "data": ""
+    "error": ""
 }

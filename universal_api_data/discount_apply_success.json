@@ -1,6 +1,10 @@
 {
     "event": "discounts.code.apply",
     "status": "success",
-    "error": "",
-    "data": ""
+    "data": {
+        "discount_code": "bolt_code",
+        "description": "bolt_description",
+        "discount_type": "bolt_discount_type",
+        "discount_amount": 1
+    }
 }

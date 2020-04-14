@@ -1,6 +1,8 @@
 {
     "event": "order.shipping",
     "status": "success",
-    "error": "",
-    "data": ""
+    "data": {
+        "shipping_options": [],
+        "in_store_pickup_options": []
+    }
 }

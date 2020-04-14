@@ -1,6 +1,5 @@
 {
     "event": "discounts.code.apply",
     "status": "failure",
-    "error": "",
-    "data": ""
+    "error": ""
 }
