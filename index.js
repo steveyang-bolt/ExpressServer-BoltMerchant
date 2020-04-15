@@ -20,12 +20,12 @@ app.all('/*', function(req, res, next) {
 var router = express.Router()
 router.post("/universal", (req, res) => {
   console.log(req.body);
-  res.json(respJsonFile);
+  res.json(universalAPIResp);
 });
 
 router.post("/webhook", (req, res) => {
   console.log(req.body);
-  res.json(respJsonFile);
+  res.json(webhookResp);
 });
 
 // Middleware Section
