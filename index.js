@@ -3,6 +3,7 @@ const express = require("express");
 var expressWinston = require('express-winston');
 var winston = require('winston'); // for transports.Console
 var bodyParser = require('body-parser')
+require('log-timestamp');
 const app = express();
 const PORT = 9090;
 var shippingAndTaxSuccess = require("./universal_api_data/shipping_and_tax_success.json");
