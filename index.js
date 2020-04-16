@@ -5,7 +5,9 @@ var winston = require('winston'); // for transports.Console
 var bodyParser = require('body-parser')
 const app = express();
 const PORT = 9090;
-var universalAPIResp = require("./universal_api_data/shipping_and_tax_failure.json");
+var shippingAndTaxSuccess = require("./universal_api_data/shipping_and_tax_success.json");
+var discountSuccess = require("./universal_api_data/discount_apply_success.json");
+var cartUpdateSuccess = require("./universal_api_data/update_cart_success.json")
 var webhookResp = require("./webhook_data/success.json")
 
 //Allow all requests from all domains & localhost
@@ -20,7 +22,17 @@ app.all('/*', function(req, res, next) {
 var router = express.Router()
 router.post("/universal", (req, res) => {
   console.log(req.body);
-  res.status(422).json(universalAPIResp);
+  switch(req.body["event"]) {
+    case "order.shipping_and_tax":
+      res.json(shippingAndTaxSuccess);
+      break;
+    case "discounts.code.apply":
+      res.json(discountSuccess);
+      break;
+    case "cart.update":
+      res.json(cartUpdateSuccess);
+      break
+  }
 });
 
 router.post("/webhook", (req, res) => {
