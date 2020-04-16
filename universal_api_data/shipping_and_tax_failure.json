@@ -1,5 +1,8 @@
 {
     "event": "order.shipping_and_tax",
     "status": "failure",
-    "error": ""
+    "error": {
+       "code": 31,
+       "message": "testing message" 
+    }
 }

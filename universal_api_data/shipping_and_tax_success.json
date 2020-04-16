@@ -23,6 +23,14 @@
                 "reference": "bolt_reference",
                 "signature": "bolt_signature",
                 "default": true
+            },
+            {
+                "service": "FedEx",
+                "cost": 100,
+                "tax_amount": 1,
+                "reference": "bolt_reference",
+                "signature": "bolt_signature",
+                "default": true
             }
         ],
         "currency": "USD"
