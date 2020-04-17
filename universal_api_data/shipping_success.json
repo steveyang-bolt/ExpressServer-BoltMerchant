@@ -2,7 +2,50 @@
     "event": "order.shipping",
     "status": "success",
     "data": {
-        "shipping_options": [],
-        "in_store_pickup_options": []
+        "shipping_options": [
+            {
+                "service": "UPS",
+                "cost": 1,
+                "reference": "bolt_reference",
+                "signature": "bolt_signature",
+                "default": true
+            },
+            {
+                "service": "FedEx",
+                "cost": 100,
+                "reference": "bolt_reference",
+                "signature": "bolt_signature",
+                "default": true
+            }
+        ],
+        "in_store_pickup_options": [
+            {
+                "reference": "bolt_reference",
+                "signature": "bolt_signature",
+                "cost": 400,
+                "store_name": "nike",
+                "pickup_window_open": 9,
+                "pickup_window_close": 22,
+                "pickup_address": {
+                    "street_address1": "street_address_1",
+                    "street_address2": "street_address_2",
+                    "street_address3": "street_address_3",
+                    "street_address4": "street_address_4",
+                    "locality": "bolt_locality",
+                    "region": "bolt_region",
+                    "postal_code": "12345",
+                    "country_code": "CA",
+                    "country": "Canada",
+                    "name": "bolt",
+                    "first_name": "steve",
+                    "last_name": "yang",
+                    "company": "bolt_company",
+                    "phone": "123456789",
+                    "email": "hello@bolt.com"
+                },
+                "distance": 11.5,
+                "distance_unit": "km"
+            }
+        ]
     }
 }

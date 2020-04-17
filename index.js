@@ -9,7 +9,9 @@ const PORT = 9090;
 var shippingAndTaxSuccess = require("./universal_api_data/shipping_and_tax_success.json");
 var discountSuccess = require("./universal_api_data/discount_apply_success.json");
 var cartUpdateSuccess = require("./universal_api_data/update_cart_success.json")
-var webhookResp = require("./webhook_data/success.json")
+var taxSuccess = require("./universal_api_data/tax_success.json");
+var shippingSuccess = require("./universal_api_data/shipping_success.json");
+var webhookResp = require("./webhook_data/success.json");
 
 //Allow all requests from all domains & localhost
 app.all('/*', function(req, res, next) {
@@ -32,7 +34,13 @@ router.post("/universal", (req, res) => {
       break;
     case "cart.update":
       res.json(cartUpdateSuccess);
-      break
+      break;
+    case "order.tax":
+      res.json(taxSuccess);
+      break;
+    case "order.shipping":
+      res.json(shippingSuccess);
+      break;
   }
 });
 

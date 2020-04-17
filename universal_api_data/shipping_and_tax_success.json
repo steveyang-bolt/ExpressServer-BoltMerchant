@@ -2,11 +2,13 @@
     "event": "order.shipping_and_tax",
     "status": "success",
     "data": {
+        "tax_result":{		
+            "amount":100	
+        },	
         "shipping_options":[
             {
                 "service": "UPS",
                 "cost": 1,
-                "tax_amount": 1,
                 "reference": "bolt_reference",
                 "signature": "bolt_signature",
                 "default": true
@@ -14,12 +16,10 @@
             {
                 "service": "FedEx",
                 "cost": 100,
-                "tax_amount": 1,
                 "reference": "bolt_reference",
                 "signature": "bolt_signature",
                 "default": true
             }
-        ],
-        "currency": "USD"
+        ]
     }
 }

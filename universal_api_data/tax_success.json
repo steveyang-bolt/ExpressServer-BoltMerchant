@@ -3,7 +3,7 @@
     "status": "success",
     "data": {
         "tax_result": {
-            "subtotal_amount": 1
+            "subtotal_amount": 300
         },
         "shipping_option": {
             "service": "UPS",
@@ -14,7 +14,12 @@
             "default": true
         },
         "items": [
-            
+            {
+                "amount": 100
+            },
+            {
+                "amount": 200
+            }
         ]
     }
 }
