@@ -2,7 +2,6 @@
 const express = require("express");
 var expressWinston = require('express-winston');
 var winston = require('winston'); // for transports.Console
-var bodyParser = require('body-parser')
 require('log-timestamp');
 const app = express();
 const PORT = 9090;
@@ -11,6 +10,7 @@ var discountSuccess = require("./universal_api_data/discount_apply_success.json"
 var cartUpdateSuccess = require("./universal_api_data/update_cart_success.json")
 var taxSuccess = require("./universal_api_data/tax_success.json");
 var shippingSuccess = require("./universal_api_data/shipping_success.json");
+var orderCreateSuccess = require("./universal_api_data/pre_auth_success.json")
 var webhookResp = require("./webhook_data/success.json");
 
 //Allow all requests from all domains & localhost
@@ -24,6 +24,7 @@ app.all('/*', function(req, res, next) {
 // Router Section
 var router = express.Router()
 router.post("/universal", (req, res) => {
+  console.log(JSON.stringify(req.body));
   console.log(req.body);
   switch(req.body["event"]) {
     case "order.shipping_and_tax":
@@ -41,6 +42,9 @@ router.post("/universal", (req, res) => {
     case "order.shipping":
       res.json(shippingSuccess);
       break;
+    case "order.create":
+      res.json(orderCreateSuccess);
+      break;
   }
 });
 
@@ -50,8 +54,7 @@ router.post("/webhook", (req, res) => {
 });
 
 // Middleware Section
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json())
+app.use(express.json())
 app.use(expressWinston.logger({
   transports: [
     new winston.transports.Console()
