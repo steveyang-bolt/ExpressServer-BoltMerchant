@@ -1,5 +1,16 @@
 {
-    "event": "order.create",
     "status": "failure",
-    "error": ""
+    "event": "order.create",
+    "error": {
+        "data": [
+            {
+                "code": 2001002,
+                "data": [
+                    {
+                        "test":1
+                    }
+                ]
+            }
+        ]
+    }
 }

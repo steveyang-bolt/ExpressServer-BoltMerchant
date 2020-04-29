@@ -6,12 +6,17 @@ require('log-timestamp');
 const app = express();
 const PORT = 9090;
 var shippingAndTaxSuccess = require("./universal_api_data/shipping_and_tax_success.json");
+var shippingAndTaxFailure = require("./universal_api_data/shipping_and_tax_failure.json");
 var discountSuccess = require("./universal_api_data/discount_apply_success.json");
+var discountFailure = require("./universal_api_data/discount_apply_failure.json")
 var cartUpdateSuccess = require("./universal_api_data/update_cart_success.json")
+var cartUpdateFailure = require("./universal_api_data/update_cart_failure.json")
 var taxSuccess = require("./universal_api_data/tax_success.json");
 var shippingSuccess = require("./universal_api_data/shipping_success.json");
 var orderCreateSuccess = require("./universal_api_data/pre_auth_success.json")
-var webhookResp = require("./webhook_data/success.json");
+var orderCreateFailure = require("./universal_api_data/pre_auth_failure.json")
+var webhookSuccess = require("./webhook_data/success.json");
+var webhookFailure = require("./webhook_data/failure.json")
 
 //Allow all requests from all domains & localhost
 app.all('/*', function(req, res, next) {
@@ -26,31 +31,36 @@ var router = express.Router()
 router.post("/universal", (req, res) => {
   console.log(JSON.stringify(req.body));
   console.log(req.body);
-  switch(req.body["event"]) {
-    case "order.shipping_and_tax":
-      res.json(shippingAndTaxSuccess);
-      break;
-    case "discounts.code.apply":
-      res.json(discountSuccess);
-      break;
-    case "cart.update":
-      res.json(cartUpdateSuccess);
-      break;
-    case "order.tax":
-      res.json(taxSuccess);
-      break;
-    case "order.shipping":
-      res.json(shippingSuccess);
-      break;
-    case "order.create":
-      res.json(orderCreateSuccess);
-      break;
-  }
+  //res.status(200).json(orderCreateSuccess);
+  res.status(422).json(orderCreateFailure);
+  // switch(req.body["event"]) {
+  //   // case "order.shipping_and_tax":
+  //   //   //res.status(422).json(shippingAndTaxFailure);
+  //   //   res.status(200).json(shippingAndTaxSuccess);
+  //   //   break;
+  //   // case "discounts.code.apply":
+  //   //   //res.status(200).json(discountFailure);
+  //   //   res.status(422).json(discountSuccess);
+  //   //   break;
+  //   // case "cart.update":
+  //   //   res.json(cartUpdateSuccess);
+  //   //   break;
+  //   // case "order.tax":
+  //   //   res.json(taxSuccess);
+  //   //   break;
+  //   // case "order.shipping":
+  //   //   res.json(shippingSuccess);
+  //   //   break;
+  //   // case "order.create":
+  //   //   res.status(200).json(orderCreateSuccess);
+  //   //   break;
+  // }
 });
 
 router.post("/webhook", (req, res) => {
+  console.log(JSON.stringify(req.body));
   console.log(req.body);
-  res.status(200).json(webhookResp);
+  res.status(200).json(webhookSuccess);
 });
 
 // Middleware Section

@@ -1,5 +1,16 @@
 {
     "event": "cart.update",
     "status": "failure",
-    "error": ""
+    "error": {
+        "data": [
+            {
+                "code": 2001001,
+                "data": [
+                    {
+                        "reason": "Invalid HMAC header"
+                    }
+                ]
+            }
+        ]
+    }
 }

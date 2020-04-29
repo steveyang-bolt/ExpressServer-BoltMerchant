@@ -3,6 +3,6 @@
     "status": "success",
     "data": {
         "display_id": "bolt_id",
-        "order_received_url": "bolt_url"
+        "order_received_url": "http://example.com/preauth_redirect_url"
     }
 }
