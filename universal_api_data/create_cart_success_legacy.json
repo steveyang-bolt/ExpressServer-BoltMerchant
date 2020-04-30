@@ -1,0 +1,23 @@
+{
+    "status": "success",
+    "cart": {
+        "order_reference": "BLT5eaa197f9ad0d",
+        "display_id": "BLT5eaa197f9ad0d",
+        "currency": "USD",
+        "items": [
+        {
+            "reference": "20",
+            "name": "Polo",
+            "sku": "woo-polo",
+            "description": "This is a simple product.",
+            "total_amount": 2000,
+            "unit_price": 2000,
+            "quantity": 1,
+            "type": "physical",
+            "image_url": "http://44.229.157.175/wp-content/uploads/2019/01/polo-2.jpg"
+        }
+        ],
+        "discounts": [],
+        "total_amount": 2000
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "status": "success",
+    "order_create": {
+        "external_inputs": null,
+        "cart": {
+            "total_amount": 5000,
+            "items": [
+                {
+                    "reference": "3",
+                    "name": "Item3",
+                    "description": "Item3, the new gold standard for items",
+                    "options": null,
+                    "total_amount": 5000,
+                    "unit_price": 5000,
+                    "tax_amount": 0,
+                    "quantity": 1,
+                    "uom": null,
+                    "upc": null,
+                    "sku": "SK-3",
+                    "isbn": null,
+                    "brand": null,
+                    "manufacturer": null,
+                    "category": null,
+                    "tags": null,
+                    "properties": null,
+                    "color": null,
+                    "size": null,
+                    "weight": null,
+                    "weight_unit": null,
+                    "image_url": "https://placeimg.com/30/30/animals/grayscale",
+                    "details_url": null,
+                    "tax_code": null,
+                    "type": "unknown"
+                }
+            ],
+            "tax_amount": 0,
+            "billing_address_id": null,
+            "billing_address": null,
+            "shipments": null,
+            "in_store_cart_shipments": null,
+            "discounts": [],
+            "discount_code": "",
+            "discount_source": null,
+            "currency": "USD",
+            "order_description": null,
+            "order_reference": "BLT5eaa197f9ad0d",
+            "transaction_reference": null,
+            "cart_url": null,
+            "display_id": "8872102611307915",
+            "is_shopify_hosted_checkout": false,
+            "metadata": null
+        },
+        "user_note": "",
+        "create_cart_on_merchant_backend": false,
+        "metadata": null
+    }
+}
