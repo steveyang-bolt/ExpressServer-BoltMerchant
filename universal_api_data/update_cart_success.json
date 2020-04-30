@@ -3,34 +3,58 @@
     "status": "success",
     "data": {
         "order_create": {
-            "external_inputs": {
-                "shopify_request": "bolt_shopify"
-            },
+            "external_inputs": null,
             "cart": {
-                "total_amount": 10,
-                "items": [],
-                "tax_amount": 1,
-                "billing_address_id": "bolt_billing_address_id",
-                "billing_address": "bolt_billing_address",
-                "shipments": [],
-                "in_store_cart_shipments": [],
-                "discounts": [],
-                "discount_code": "bolt_discount_code",
-                "discount_source": 1,
-                "currency": "USD",
-                "order_description": "bolt_description",
-                "order_reference": "bolt_reference",
-                "transaction_reference": "bolt_reference",
-                "cart_url": "bolt_url",
-                "display_id": "bolt_display_id",
-                "is_shopify_hosted_checkout": false,
-                "metadata": {}
+              "total_amount": 5000,
+              "items": [
+                {
+                  "reference": "3",
+                  "name": "Item3",
+                  "description": "Item3, the new gold standard for items",
+                  "options": null,
+                  "total_amount": 5000,
+                  "unit_price": 5000,
+                  "tax_amount": 0,
+                  "quantity": 1,
+                  "uom": null,
+                  "upc": null,
+                  "sku": "SK-3",
+                  "isbn": null,
+                  "brand": null,
+                  "manufacturer": null,
+                  "category": null,
+                  "tags": null,
+                  "properties": null,
+                  "color": null,
+                  "size": null,
+                  "weight": null,
+                  "weight_unit": null,
+                  "image_url": "https://placeimg.com/30/30/animals/grayscale",
+                  "details_url": null,
+                  "tax_code": null,
+                  "type": "unknown"
+                }
+              ],
+              "tax_amount": 0,
+              "billing_address_id": null,
+              "billing_address": null,
+              "shipments": null,
+              "in_store_cart_shipments": null,
+              "discounts": [],
+              "discount_code": "",
+              "discount_source": null,
+              "currency": "USD",
+              "order_description": null,
+              "order_reference": "3553x4AbNu7H4bVtX3SXV5lr4",
+              "transaction_reference": null,
+              "cart_url": null,
+              "display_id": "8872102611307915",
+              "is_shopify_hosted_checkout": false,
+              "metadata": null
             },
-            "user_note": "bolt_note",
-            "create_cart_on_merchant_backend": true,
-            "metadata": {
-                "encrypted_user_id": "bolt_user_id"
-            }
-        }
+            "user_note": "",
+            "create_cart_on_merchant_backend": false,
+            "metadata": null
+          }
     }
 }
