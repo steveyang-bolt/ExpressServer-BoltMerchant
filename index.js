@@ -34,8 +34,8 @@ var router = express.Router()
 router.post("/universal", (req, res) => {
   console.log(JSON.stringify(req.body));
   console.log(req.body);
-  res.status(200).json(cartUpdateSuccessLegacy);
-  // switch(req.body["event"]) {
+  // res.status(200).json(cartUpdateSuccessLegacy);
+  switch(req.body["event"]) {
     // case "order.shipping_and_tax":
     //   //res.status(422).json(shippingAndTaxFailure);
     //   res.status(200).json(shippingAndTaxSuccess);
@@ -44,9 +44,9 @@ router.post("/universal", (req, res) => {
     //   //res.status(200).json(discountFailure);
     //   res.status(422).json(discountSuccess);
     //   break;
-    // case "cart.update":
-    //   res.json(cartUpdateSuccess);
-    //   break;
+    case "cart.update":
+      res.json(cartUpdateSuccess);
+      break;
     // case "cart.create":
     //   res.status(200).json(createCartSuccess);
     // case "order.tax":
@@ -55,13 +55,13 @@ router.post("/universal", (req, res) => {
     // case "order.shipping":
     //   res.json(shippingSuccess);
     //   break;
-    // case "order.create":
-    //   res.status(200).json(orderCreateSuccess);
-    //   break;
+    case "cart.create":
+      res.status(200).json(createCartSuccess);
+      break;
     // default:
     //   res.status(200).json(createCartSuccess);
     //   break;
-  // }
+  }
 });
 
 router.post("/webhook", (req, res) => {
