@@ -1,0 +1,22 @@
+{
+  "status": "success",
+  "tax_result": {
+      "subtotal_amount": 300
+  },
+  "shipping_option": {
+      "service": "UPS",
+      "cost": 1,
+      "tax_amount": 1,
+      "reference": "bolt_reference",
+      "signature": "bolt_signature",
+      "default": true
+  },
+  "items": [
+      {
+          "amount": 100
+      },
+      {
+          "amount": 200
+      }
+  ]
+}

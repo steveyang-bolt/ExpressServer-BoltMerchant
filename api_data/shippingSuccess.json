@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "shipping_options": [
+      {
+          "service": "UPS",
+          "cost": 1,
+          "reference": "bolt_reference",
+          "signature": "bolt_signature",
+          "default": true
+      },
+      {
+          "service": "FedEx",
+          "cost": 100,
+          "reference": "bolt_reference",
+          "signature": "bolt_signature",
+          "default": true
+      }
+  ]
+}
