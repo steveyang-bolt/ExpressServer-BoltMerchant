@@ -5,21 +5,23 @@ var winston = require('winston'); // for transports.Console
 require('log-timestamp');
 const app = express();
 const PORT = 9090;
-var shippingAndTaxSuccess = require("./universal_api_data/shipping_and_tax_success.json");
-var shippingAndTaxFailure = require("./universal_api_data/shipping_and_tax_failure.json");
-var discountSuccess = require("./universal_api_data/discount_apply_success.json");
-var discountFailure = require("./universal_api_data/discount_apply_failure.json");
-var cartUpdateSuccess = require("./universal_api_data/update_cart_success.json");
-var cartUpdateSuccessLegacy = require("./universal_api_data/update_cart_success_legacy.json");
-var cartUpdateFailure = require("./universal_api_data/update_cart_failure.json");
-var taxSuccess = require("./universal_api_data/tax_success.json");
-var shippingSuccess = require("./universal_api_data/shipping_success.json");
-var orderCreateSuccess = require("./universal_api_data/pre_auth_success.json");
-var orderCreateFailure = require("./universal_api_data/pre_auth_failure.json");
-var createCartSuccess = require("./universal_api_data/create_cart_success.json")
-var createCartSuccessLegacy = require("./universal_api_data/create_cart_success_legacy.json");
+var shippingAndTaxSuccessUniversal = require("./universal_api_data/shipping_and_tax_success.json");
+var shippingAndTaxFailureUniversal = require("./universal_api_data/shipping_and_tax_failure.json");
+var discountSuccessUniversal = require("./universal_api_data/discount_apply_success.json");
+var discountFailureUniversal = require("./universal_api_data/discount_apply_failure.json");
+var cartUpdateSuccessUniversal = require("./universal_api_data/update_cart_success.json");
+var cartUpdateSuccessLegacyUniversal = require("./universal_api_data/update_cart_success_legacy.json");
+var cartUpdateFailureUniversal = require("./universal_api_data/update_cart_failure.json");
+var taxSuccessUniversal = require("./universal_api_data/tax_success.json");
+var shippingSuccessUniversal = require("./universal_api_data/shipping_success.json");
+var orderCreateSuccessUniversal = require("./universal_api_data/pre_auth_success.json");
+var orderCreateFailureUniversal = require("./universal_api_data/pre_auth_failure.json");
+var createCartSuccessUniversal = require("./universal_api_data/create_cart_success.json")
 var webhookSuccess = require("./webhook_data/success.json");
 var webhookFailure = require("./webhook_data/failure.json");
+
+var shippingSuccessAPI = require("./api_data/shippingSuccess.json");
+var taxSuccessAPI = require("./api_data/taxSuccess.json");
 
 //Allow all requests from all domains & localhost
 app.all('/*', function(req, res, next) {
@@ -34,35 +36,45 @@ var router = express.Router()
 router.post("/universal", (req, res) => {
   console.log(JSON.stringify(req.body));
   console.log(req.body);
-  // res.status(200).json(cartUpdateSuccessLegacy);
   switch(req.body["event"]) {
-    // case "order.shipping_and_tax":
-    //   //res.status(422).json(shippingAndTaxFailure);
-    //   res.status(200).json(shippingAndTaxSuccess);
-    //   break;
+    case "order.shipping_and_tax":
+      res.status(200).json(shippingAndTaxSuccessUniversal);
+      break;
     // case "discounts.code.apply":
     //   //res.status(200).json(discountFailure);
     //   res.status(422).json(discountSuccess);
     //   break;
     case "cart.update":
-      res.json(cartUpdateSuccess);
+      res.json(cartUpdateSuccessUniversal);
       break;
     // case "cart.create":
     //   res.status(200).json(createCartSuccess);
-    // case "order.tax":
-    //   res.json(taxSuccess);
-    //   break;
-    // case "order.shipping":
-    //   res.json(shippingSuccess);
-    //   break;
+    case "order.tax":
+      res.json(taxSuccessUniversal);
+      break;
+    case "order.shipping":
+      res.json(shippingSuccessUniversal);
+      break;
     case "cart.create":
-      res.status(200).json(createCartSuccess);
+      res.status(200).json(createCartSuccessUniversal);
       break;
     // default:
     //   res.status(200).json(createCartSuccess);
     //   break;
   }
 });
+
+router.post("/shipping", (req, res) => {
+  console.log("Shipping Endpoint");
+  console.log(req.body);
+  res.status(200).json(shippingSuccessAPI);
+});
+
+router.post("/tax", (req, res) => {
+  console.log("Tax Endpoint");
+  console.log(req.body);
+  res.status(200).json(taxSuccessAPI);
+})
 
 router.post("/webhook", (req, res) => {
   console.log(JSON.stringify(req.body));
